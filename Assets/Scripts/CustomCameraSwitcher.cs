@@ -14,8 +14,8 @@ public class CustomCameraSwitcher : MonoBehaviour
 
         if (firstPersonCamera != null && thirdPersonCamera != null)
         {
-            firstPersonCamera.enabled = false;
-            thirdPersonCamera.enabled = true;
+            firstPersonCamera.gameObject.SetActive(false);
+            thirdPersonCamera.gameObject.SetActive(true);
         }
     }
 
@@ -24,8 +24,8 @@ public class CustomCameraSwitcher : MonoBehaviour
         Debug.Log($"Switch camera: {firstPersonCamera} {thirdPersonCamera}");
         if (firstPersonCamera != null && thirdPersonCamera != null)
         {
-            firstPersonCamera.enabled = !firstPersonCamera.enabled;
-            thirdPersonCamera.enabled = !thirdPersonCamera.enabled;
+            firstPersonCamera.gameObject.SetActive(!firstPersonCamera.gameObject.activeInHierarchy);
+            thirdPersonCamera.gameObject.SetActive(!thirdPersonCamera.gameObject.activeInHierarchy);
         }
     }
 }
